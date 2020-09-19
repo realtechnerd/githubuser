@@ -1,0 +1,79 @@
+@import url(https://cdn.jsdelivr.net/gh/realtechnerd/button.css@master/style.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+* {
+    font-family: Oxygen;
+}
+.container {
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+}
+.Header {
+    padding: 5px;
+    background-color: #211F1F;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.Header h1, a {
+    display: inline-block;
+    padding: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+#input {
+    padding: 10px;
+    font-family: Inter !important;
+    outline: none !important;
+    border-radius: 3rem;
+    font-size: 15pt;
+    border: none;
+    background-color: #d3d3d3;
+}
+.MainContent {
+    padding: 10px;
+    text-align: left;
+}
+.Card {
+    padding: 20px;
+    border-radius: 1rem;
+    background-color: #e1e1e1;
+    font-size: 30pt;
+    color: #333;
+}
+.Card h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+@media only screen and (max-width: 600px) {
+    .Header {
+        font-size: 10pt !important;
+        text-align: center;
+    }
+    .container {
+      margin-left: 5px !important;
+      margin-right: 5px !important;
+      margin-top: 5px !important;
+      margin-bottom: 5px !important;
+    }
+    #input {
+        width: 95% !important;
+    }
+}
+#titl {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.i {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    text-align: center;
+}
+  .circular--landscape img {
+    height: 200px;
+    border-radius: 10rem;
+  }
+.follows h6{
+    display: inline-block;
+    padding: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
