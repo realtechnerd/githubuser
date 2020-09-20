@@ -8,7 +8,8 @@ class MainContent extends Component {
         super();
         this.state = {
             input: "",
-            data: ""
+            data: "",
+            site: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.getInfo = this.getInfo.bind(this);
@@ -19,7 +20,7 @@ class MainContent extends Component {
             .then(data => {
                 console.log(data);
                 this.setState({
-                    data: data
+                    data: data, site: data.blog
                 })
             })
     }
@@ -36,10 +37,19 @@ class MainContent extends Component {
             .then(data => {
                 console.log(data);
                 this.setState({
-                    data: data
+                    data: data, site: data.blog
                 })
             })
-
+            if (this.state.input === "") {
+                fetch(`https://api.github.com/users/realtechnerd`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    this.setState({
+                        data: data, site: data.blog
+                    })
+                })
+            }
             e.preventDefault();
     }
     render() { 
@@ -54,7 +64,7 @@ class MainContent extends Component {
                     img={this.state.data.avatar_url} 
                     followers={this.state.data.followers}
                     following={this.state.data.following}
-                    site={this.state.data.blog}
+                    site={this.state.site}
                     input={this.state.input}
                     bio={this.state.data.bio}
                     repositories={this.state.data.public_repos}
