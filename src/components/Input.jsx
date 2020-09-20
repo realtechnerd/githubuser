@@ -14,7 +14,7 @@ class Input extends React.Component {
                     value={this.props.value} 
                     id="input"
                     onChange={this.props.onChange}
-                    placeholder="Enter a city.."
+                    placeholder="Enter a username.."
                     autoComplete="off"
                 />
             </form>
