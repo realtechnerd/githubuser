@@ -7,11 +7,22 @@ class MainContent extends Component {
     constructor() {
         super();
         this.state = {
-            input: ""
+            input: "",
+            data: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.getInfo = this.getInfo.bind(this);
     };
+    componentDidMount() {
+        fetch(`https://api.github.com/users/realtechnerd`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    data: data
+                })
+            })
+    }
     handleChange(e) {
         const {name, value} = e.target;
 
@@ -24,10 +35,10 @@ class MainContent extends Component {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                this.setState({
+                    data: data
+                })
             })
-            .catch(
-                alert("Uh-Oh.")
-            );
 
             e.preventDefault();
     }
@@ -36,8 +47,18 @@ class MainContent extends Component {
             <div className="container">
                 <div className="MainContent">
                 <Input test={this.getInfo} value={this.state.input} onChange={this.handleChange}/>
-                        <br/>
-                        <Card/>
+                <br/>
+                <Card 
+                    name={this.state.data.login}
+                    url={this.state.data.html_url}
+                    img={this.state.data.avatar_url} 
+                    followers={this.state.data.followers}
+                    following={this.state.data.following}
+                    site={this.state.data.blog}
+                    input={this.state.input}
+                    bio={this.state.data.bio}
+                    repositories={this.state.data.public_repos}
+                />
                 </div>
             </div>
          );

@@ -76,6 +76,7 @@
   margin-bottom: 0px !important;
   margin-top: 0px !important;
   text-align: center;
+  color: #000;
 }
 
 .circular--landscape img {
@@ -83,10 +84,27 @@
   border-radius: 10rem;
 }
 
-.follows h6 {
+.rf h6 {
   display: inline-block;
   padding: 5px;
   margin-top: 0px;
   margin-bottom: 0px;
+  color: #000;
+}
+
+.Card a {
+  color: #000;
+}
+
+.ia {
+  color: #000;
+  font-size: 15pt;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+p.i {
+  margin-top: 15px;
+  font-size: 15pt;
 }
 /*# sourceMappingURL=style.css.map */
